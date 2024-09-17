@@ -1,6 +1,6 @@
-package jabratech:black-schole;
+package jabratech:black-scholes;
 
-interface black-schole-handler {
+interface black-scholes-handler {
 
     calculate-call: func(
         spot: f64, 
@@ -69,8 +69,8 @@ interface black-schole-handler {
     ) -> result<f64, string>;
 }
 
-world black-schole {
+world black-scholes {
     
-    export black-schole-handler;
+    export black-scholes-handler;
 
 }
