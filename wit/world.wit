@@ -1,0 +1,76 @@
+package jabratech:black-schole;
+
+interface black-schole-handler {
+
+    calculate-call: func(
+        spot: f64, 
+        strike: f64, 
+        iv: f64,
+        discount: option<f64>, //discount is required in python code but not in rust lib
+        ttm: option<f64>, //ttm is not required in python code but required in rust lib
+        r2: option<f64>, //r2 is not required in python code but required in rust lib
+    ) -> result<f64, string>;
+
+    calculate-call-delta: func(
+        spot: f64, 
+        strike: f64, 
+        ttm: f64, 
+        r2: f64, 
+        iv: f64
+    ) -> result<f64, string>;
+
+    calculate-call-gamma: func(
+        spot: f64, 
+        strike: f64, 
+        ttm: f64, 
+        r2: f64, 
+        iv: f64
+    ) -> result<f64, string>;
+
+    calculate-call-theta: func(
+        spot: f64, 
+        strike: f64, 
+        ttm: f64, 
+        r2: f64, 
+        iv: f64
+    ) -> result<f64, string>;
+
+    calculate-put: func(
+        spot: f64, 
+        strike: f64, 
+        iv: f64,
+        discount: option<f64>, //discount is required in python code but not in rust lib
+        ttm: option<f64>, //ttm is not required in python code but required in rust lib
+        r2: option<f64>, //r2 is not required in python code but required in rust lib
+    ) -> result<f64, string>;
+
+    calculate-put-delta: func(
+        spot: f64, 
+        strike: f64, 
+        ttm: f64, 
+        r2: f64, 
+        iv: f64
+    ) -> result<f64, string>;
+
+    calculate-put-gamma: func(
+        spot: f64, 
+        strike: f64, 
+        ttm: f64, 
+        r2: f64, 
+        iv: f64
+    ) -> result<f64, string>;
+
+    calculate-put-theta: func(
+        spot: f64, 
+        strike: f64, 
+        ttm: f64, 
+        r2: f64, 
+        iv: f64
+    ) -> result<f64, string>;
+}
+
+world black-schole {
+    
+    export black-schole-handler;
+
+}
