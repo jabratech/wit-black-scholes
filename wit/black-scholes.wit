@@ -1,0 +1,11 @@
+interface black-scholes-handler {    
+    use types.{
+      otc-pricer-request,  
+      calculate-greeks-request
+    };
+    use jabratech:common/types.{greeks};
+    
+    otc-pricer: func(request: otc-pricer-request) -> result<f64, string>;  
+    calculate-greeks: func(request: calculate-greeks-request) -> result<greeks, string>;
+    
+  }

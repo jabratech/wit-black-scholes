@@ -1,0 +1,22 @@
+interface types {
+  //use jabratech:common/types.{pair, currency, option-kind, side, option-type, payout-ccy, instrument-kind, counterparty, user};
+  use jabratech:common/types.{option-kind};
+
+  record otc-pricer-request {
+    option-kind: option-kind,
+    spot: f64, 
+    strike: f64, 
+    r2: f64, //rate (risk-free interest rate)
+    iv: f64, //sigma (volatility)
+    ttm: f64 //maturity (in years)
+  }
+
+  record calculate-greeks-request {
+    option-kind: option-kind,
+    spot: f64, 
+    strike: f64, 
+    r2: f64, //rate (risk-free interest rate)
+    iv: f64, //sigma (volatility)
+    ttm: f64 //maturity (in years)
+  }
+}
