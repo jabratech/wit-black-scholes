@@ -3,6 +3,8 @@ interface types {
   use jabratech:common/types.{option-kind};
 
   record otc-pricer-request {
+    quantity: f64,
+    currency: string,
     option-kind: option-kind,
     spot: f64, 
     strike: f64, 
@@ -12,6 +14,8 @@ interface types {
   }
 
   record calculate-greeks-request {
+    quantity: f64,
+    currency: string,
     option-kind: option-kind,
     spot: f64, 
     strike: f64, 
