@@ -4,23 +4,23 @@ interface types {
 
   record otc-pricer-request {
     quantity: f64,
-    currency: string,
+    currency: string, //(base or quote)
     option-kind: option-kind,
     spot: f64, 
     strike: f64, 
     r2: f64, //rate (risk-free interest rate)
     iv: f64, //sigma (volatility)
-    ttm: f64 //maturity (in years)
+    ttm: f64 //maturity (in days)
   }
 
   record calculate-greeks-request {
     quantity: f64,
-    currency: string,
+    currency: string, //(base or quote)
     option-kind: option-kind,
     spot: f64, 
     strike: f64, 
     r2: f64, //rate (risk-free interest rate)
     iv: f64, //sigma (volatility)
-    ttm: f64 //maturity (in years)
+    ttm: f64 //maturity (in days)
   }
 }
